@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <div class="header-container">
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="stylesheet" href="../static/css/estiloTablas.css">
+
+        <title> M.E.S - Grupo 6 - Listado Incidentes </title>
+    </div>
+
+</head>
+
+
+<body>
+    <div class="table-container">
+        <table>
+            <tbody>
+            <caption> Listado de Incidentes para miembro {{miembro.id}}</caption>
+            <tr class="info-tabla">
+                <th>Incidente</th>
+                <th>¿Esta Cerrado?</th>
+                <th>Fecha de Apretura</th>
+                <th>Fecha de Cierre</th>
+                <th>Detalle</th>
+            </tr>
+
+            {% for incidente in incidentes %}
+            <tr>
+                <td data-cell="Incidente Afectado">{{ incidente.id }}</td>
+                <td data-cell="¿Esta cerrado?">{% if incidente.fecha_cierre is None %} NO {% else %} SI {% endif %}</td>
+                <td data-cell="Fecha Apertura">{{ incidente.fecha_apertura }}</td>
+                <td data-cell="Fecha Cierre">{% if incidente.fecha_cierre is None %} - {% else %} {{incidente.fecha_cierre}} {% endif %}</td>
+                <td data-cell="Detalle">{{ incidente.detalle }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
