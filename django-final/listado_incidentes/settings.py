@@ -75,16 +75,16 @@ WSGI_APPLICATION = 'listado_incidentes.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-pymysql.install_as_MySQLdb()
+#pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dds',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dds_f92h',
         'USER': 'dds',
-        'PASSWORD': 'dds1234',
-        'HOST': 'localhost',
-        'PORT': '3307',
+        'PASSWORD': 'N7HXIUrOwcfIdF6hvcmGQXkfQO2j8UrX',
+        'HOST': 'dpg-cle1cbmf27hc738pa21g-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
