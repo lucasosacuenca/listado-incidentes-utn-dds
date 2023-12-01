@@ -20,5 +20,5 @@ from incidentes_miembro.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('prueba/<int:id_parameter>', index, name='index'),
+    path('incidente/miembro/<int:id_parameter>', index, name='index'),
 ]
